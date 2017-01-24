@@ -7,21 +7,25 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
+import { RouterModule } from '@angular/router';
+import { DashboardComponent } from './dashboard.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     // @NOTE inclusion of FormsModule in imports is required for two-way binding
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent
+    DashboardComponent,
+    HeroDetailComponent,
+    HeroesComponent
   ],
-  providers: [
-    HeroService
-  ],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
