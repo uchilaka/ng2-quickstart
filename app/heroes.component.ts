@@ -16,6 +16,12 @@ import { Router } from '@angular/router';
 })
 
 export class HeroesComponent implements OnInit {
+  // type of heroes property is inferred from HEROES const (array of Hero class instances)
+  // the `:` notation refers to unitialized properties
+  heroes: Hero[];
+  // explicitly declared type of `selectedHero` property (Hero class)
+  // `selectedHero` is property for storing the selected hero passed through the binding function
+  selectedHero: Hero;
   // teach the component about the HeroService
   constructor(
     private router: Router,
@@ -36,12 +42,6 @@ export class HeroesComponent implements OnInit {
   }
 
   title = 'Tour of Heroes';
-  // type of heroes property is inferred from HEROES const (array of Hero class instances)
-  // the `:` notation refers to unitialized properties
-  heroes: Hero[];
-  // explicitly declared type of `selectedHero` property (Hero class)
-  // `selectedHero` is property for storing the selected hero passed through the binding function
-  selectedHero: Hero;
   // binding function to template click action to select hero (see li in list template)
   onSelect(hero: Hero): void {
     this.selectedHero = hero;

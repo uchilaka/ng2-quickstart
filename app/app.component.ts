@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+    moduleId: module.id,
     selector: 'root-view',
     template: `
     <h1>{{title}}</h1>
